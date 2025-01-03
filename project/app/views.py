@@ -11,8 +11,9 @@ def get_password(request):
     uppercase = list(string.ascii_uppercase)
     lowercase = list(string.ascii_lowercase)
     special_chars = list(string.punctuation)
+    numbers = list(string.digits)
 
-    pool = uppercase + lowercase + special_chars
+    pool = uppercase + lowercase + special_chars + numbers
     password = ''.join(random.choice(pool) for _ in range(14))
 
     return JsonResponse({
